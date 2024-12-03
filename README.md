@@ -1,4 +1,5 @@
 # Credit Card Fraud Detection in Imbalanced Data With XGBoost-DNN Model
+This model took a reference from literature by reethi Devan and Neelu Khare (2020), "An efficient XGBoost–DNN-based classification model for network intrusion detection system".
 
 ## Overview
 This repository contains a credit card fraud detection model built using XGBoost for feature selection and Deep Neural Networks (DNN) for classification. The project focuses on addressing class imbalance using SMOTE (Synthetic Minority Over-sampling Technique). The goal of the project is to build an efficient fraud detection system by selecting important features and optimizing the DNN model through hyperparameter tuning and cross-validation.
@@ -7,12 +8,11 @@ This repository contains a credit card fraud detection model built using XGBoost
 The dataset used is the European Credit Card Fraud Detection dataset, containing transactions made by credit card holders in September 2013. The dataset includes 284,807 transactions, with 492 frauds, making it highly imbalanced (fraudulent transactions account for 0.172% of the total transactions).
 
 ## Key Features:
-V1 to V28: Principal components resulting from a PCA transformation. Due to confidentiality, the original features are not available.
-Time: The time (in seconds) since the first transaction in the dataset.
-Amount: The transaction amount, which can be used in cost-sensitive learning.
-Class: The target variable where 1 represents fraud and 0 represents a non-fraudulent transaction.
-Data Imbalance Handling:
-Since fraudulent transactions make up a very small portion of the dataset, SMOTE is applied to oversample the minority class (fraudulent transactions), helping the model learn better by balancing the dataset before training.
+- V1 to V28: Principal components resulting from a PCA transformation. Due to confidentiality, the original features are not available.
+- Time: The time (in seconds) since the first transaction in the dataset.
+- Amount: The transaction amount, which can be used in cost-sensitive learning.
+- Class: The target variable where 1 represents fraud and 0 represents a non-fraudulent transaction.
+- Data Imbalance Handling: Since fraudulent transactions make up a very small portion of the dataset, SMOTE is applied to oversample the minority class (fraudulent transactions), helping the model learn better by balancing the dataset before training.
 
 ## Methodology
 1. Data Preprocessing:
