@@ -2,7 +2,8 @@
 This model took a reference from literature by reethi Devan and Neelu Khare (2020), "An efficient XGBoost–DNN-based classification model for network intrusion detection system".
 
 ## Overview
-This repository contains a credit card fraud detection model built using XGBoost for feature selection and Deep Neural Networks (DNN) for classification. The project focuses on addressing class imbalance using SMOTE (Synthetic Minority Over-sampling Technique). The goal of the project is to build an efficient fraud detection system by selecting important features and optimizing the DNN model through hyperparameter tuning and cross-validation.
+The surge in digital transactions has heightened the risk of credit card fraud, which is often hidden in highly imbalanced data, making the detection of rare fraudulent cases challenging. This study aims to develop an effective real-time credit card fraud detection system for imbalanced data using an XGBoost-Deep Neural Network (DNN) model. XGBoost is utilized for feature selection and 
+complexity reduction, while the DNN is employed to capture complex patterns within the data. Various resampling techniques are applied and their performances are compared using metrics such as recall, precision, F-score, AUC-PR, computational time, and latency. The results reveal two standout models: Model 2 (Random Oversampling with a two-hidden-layers DNN architecture) achieved the highest F2-score of 0,860 at a threshold of 0,5, and Model 7' (SMOTE-Random Undersampling with a three-hidden-layers DNN architecture) achieved the highest recall of 0,908 at a threshold of 0,1. Model 2 is suitable for a balanced approach, whereas Model 7' is ideal for minimizing financial losses from fraud. All top-performing models demonstrated a latency of < 1 m s per transaction, meeting the requirements of a real-time system. These findings provide strategic guidance for banks in selecting a model that aligns with their specific priorities and risk tolerance. 
 
 ## Dataset
 The dataset used is the European Credit Card Fraud Detection dataset, containing transactions made by credit card holders in September 2013. The dataset includes 284,807 transactions, with 492 frauds, making it highly imbalanced (fraudulent transactions account for 0.172% of the total transactions).
@@ -14,22 +15,5 @@ The dataset used is the European Credit Card Fraud Detection dataset, containing
 - Class: The target variable where 1 represents fraud and 0 represents a non-fraudulent transaction.
 - Data Imbalance Handling: Since fraudulent transactions make up a very small portion of the dataset, SMOTE is applied to oversample the minority class (fraudulent transactions), helping the model learn better by balancing the dataset before training.
 
-## Methodology
-1. Data Preprocessing:
-Sampling: A 3% sample of the dataset is taken from both the fraud and non-fraud categories to minimize testing time while preserving the class distribution.
-Normalization: The Time and Amount features are normalized, as they are the only non-transformed features in the dataset.
-SMOTE: Used to balance the dataset by oversampling the minority (fraudulent) class.
-2. Feature Selection:
-XGBoost is first used to perform feature selection based on feature importance scores. The top features are selected to reduce dimensionality and improve the performance of the model.
-3. Model Development:
-Deep Neural Network (DNN) is then trained using the selected features. The model is optimized using the Adam optimizer with an initial learning rate of 0.01.
-Hyperparameter Tuning: The model undergoes hyperparameter tuning to find the optimal parameters for training.
-Stratified K-Fold Cross-Validation: Given the imbalanced nature of the dataset, stratified k-fold cross-validation is used to ensure that both classes are represented proportionally in each fold.
-4. Model Evaluation:
-The model’s performance is evaluated using various metrics such as accuracy, precision, recall, and F1-score.
-Final Results:
-Accuracy: 99%
-Precision: 0.75
-Recall: 1.00
-F1-Score: 0.85
-These results indicate that the model works well, with high sensitivity to detect fraudulent transactions, while maintaining a reasonable precision and F1 score.
+## Thesis Paper:
+[Thesis Paper](http://repository.ipb.ac.id/handle/123456789/168822)
